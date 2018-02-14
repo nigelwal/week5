@@ -18,10 +18,10 @@
             <p>Second number: </p><input type="text" name="num2" id="number2"><br><br>
             </form>
 
-            <button class="button" onclick="myaddFunction()">Add</button>
-			<button class="button" onclick="mysubtractFunction()">Subtract</button>
-			<button class="button" onclick="mymultiplyFunction()">Multiply</button>
-			<button class="button" onclick="mydivideFunction()">Divide</button>
+            <button class="button" onclick="myFunction('add')">Add</button>
+			<button class="button" onclick="myFunction('subtract')">Subtract</button>
+			<button class="button" onclick="myFunction('multiply')">Multiply</button>
+			<button class="button" onclick="myFunction('divide')">Divide</button>
         <p id="demo"></p>
 
 
@@ -29,40 +29,41 @@
       </div>
     </div>
 <script>
-  function myaddFunction(){
-  // Read in two values from input boxes
-  var num1 = parseInt(document.getElementById("number1").value);
-  var num2 = parseInt(document.getElementById("number2").value);
-  var add, subtract;
-  //Add them together
-  add = num1 + num2;
-  
-  //display on the page
-  document.getElementById("demo").innerHTML = "Addition; " +add;
-  }
-  
-  
-  
-  function mymultiplyFunction(){
-  var num1 = parseInt(document.getElementById("number1").value);
-  var num2 = parseInt(document.getElementById("number2").value);
-  
-  document.getElementById("demo").innerHTML = num1 * num2;
+function myFunction(parem){
+// Read in two values
+console.log(parem);
+var num1 = parseInt(document.getElementById("number1").value);
+var num2 = parseInt(document.getElementById("number2").value);
+var result;
 
-  }
-  
-  
-  function mydivideFunction(){ 
-  var num1 = parseInt(document.getElementById("number1").value);
-  var num2 = parseInt(document.getElementById("number2").value);
-document.getElementById("demo").innerHTML = num1 / num2;
+if (parem == 'add') {
+// Add them together 
+result = num1 + num2;
 }
 
-function mysubtractFunction(){ 
-  var num1 = parseInt(document.getElementById("number1").value);
-  var num2 = parseInt(document.getElementById("number2").value);
-document.getElementById("demo").innerHTML = num1 - num2;
+else if (parem == 'multiply') 
+{
+// Add them together 
+result = num1 * num2;
 }
+
+else if (parem == 'subtract') 
+{
+// Add them together 
+result = num1 - num2;
+}
+
+else if (parem == 'divide') 
+{
+// Add them together 
+result = num1 / num2;
+}
+
+//display on the page
+document.getElementById("demo").innerHTML = ' Answer ' + result;
+}
+
+
 
   </script>
 </body>
